@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{33A7123A-A7BD-4406-934B-491EFFD7B33D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Example</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Example</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Calabash">
+      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.13.0\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\PathMenuXamarin\PathMenuXamarin.csproj">
+      <Project>{A2A45402-0093-4F89-AC99-E8D8FF3A5E41}</Project>
+      <Name>PathMenuXamarin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chooser-button-tab-highlighted.png" />
+    <BundleResource Include="Resources\chooser-button-tab-highlighted%402x.png" />
+    <BundleResource Include="Resources\chooser-button-tab.png" />
+    <BundleResource Include="Resources\chooser-button-tab%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-button-highlighted.png" />
+    <BundleResource Include="Resources\chooser-moment-button-highlighted%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-button.png" />
+    <BundleResource Include="Resources\chooser-moment-button%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-camera-highlighted.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-camera-highlighted%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-camera.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-camera%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-music-highlighted.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-music-highlighted%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-music.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-music%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-place-highlighted.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-place-highlighted%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-place.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-place%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-sleep-highlighted.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-sleep-highlighted%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-sleep.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-sleep%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-thought-highlighted.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-thought-highlighted%402x.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-thought.png" />
+    <BundleResource Include="Resources\chooser-moment-icon-thought%402x.png" />
+    <BundleResource Include="Resources\highlighted.png" />
+    <BundleResource Include="Resources\highlighted%402x.png" />
+    <BundleResource Include="Resources\Sounds\bloom.caf" />
+    <BundleResource Include="Resources\Sounds\fold.caf" />
+    <BundleResource Include="Resources\Sounds\selected.caf" />
+    <BundleResource Include="Resources\bloom.caf" />
+    <BundleResource Include="Resources\fold.caf" />
+    <BundleResource Include="Resources\selected.caf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Sounds\" />
+  </ItemGroup>
+</Project>
